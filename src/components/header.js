@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/header.css';
 
-const Header = () => {
+const Header = (props) => {
 
-    const [isShrunk, setIsShrunk] = useState(false);
+    const [isShrunk, setIsShrunk] = useState(props.show);
 
     const buttonHandler = () => {
         setIsShrunk(current => !current)
+        props.btn_handler()
     }
 
     useEffect(() =>{}, [isShrunk])
